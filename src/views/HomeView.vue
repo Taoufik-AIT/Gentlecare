@@ -12,23 +12,25 @@
         </div>
       </nav>
       <div class="hero-content">
-        <h1>Découvrez la puissance de la beauté naturelle</h1>
-        <p>Découvrez les bienfaits de nos produits cosmétiques naturels et écologiques, fabriqués avec les meilleurs ingrédients.</p>
+        <h1>Découvrez la puissance de la beauté naturelle test github</h1>
+        <p>
+          Découvrez les bienfaits de nos produits cosmétiques naturels et écologiques, fabriqués
+          avec les meilleurs ingrédients.
+        </p>
         <div class="cta-buttons">
           <button @click="goToCatalog" class="btn btn-primary">Shop</button>
         </div>
       </div>
     </header>
-    
+
     <main>
       <AboutSection />
-      <ProductCarousel 
+      <ProductCarousel
         title="Nos derniers produits"
         :products="featuredProducts"
         @shop="goToCatalog"
       />
     </main>
-    
   </div>
 </template>
 
@@ -43,13 +45,12 @@ export default {
   name: 'Home',
   components: {
     AboutSection,
-    ProductCarousel,
+    ProductCarousel
   },
   setup() {
     const store = useStore()
     const router = useRouter()
-    window.scrollTo(0, 0);
-
+    window.scrollTo(0, 0)
 
     const featuredProducts = computed(() => {
       return store.state.products.slice(0, 8) // Prend les 8 premiers produits
@@ -90,14 +91,14 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); 
-  z-index: 1; 
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 .hero-content {
-  position: relative; 
-  z-index: 2; 
+  position: relative;
+  z-index: 2;
   max-width: 60%;
-  color: #F4F4F4;
+  color: #f4f4f4;
   text-align: left;
   font-family: satoshi;
 }
